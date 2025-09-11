@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn3gl0g0kqpx3"]
+[gd_scene load_steps=10 format=3 uid="uid://cn3gl0g0kqpx3"]
 
+[ext_resource type="Script" uid="uid://dk7wj45pao6w7" path="res://scripts/character_body_2d.gd" id="1_g2brh"]
 [ext_resource type="Texture2D" uid="uid://6cbgdf3rf53f" path="res://assets/sprites/knight.png" id="1_lj8jo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2brh"]
@@ -38,9 +39,35 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj8jo"]
+radius = 5.09902
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2brh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_g2brh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_rhr3r")
+autoplay = "default"
 frame = 3
 frame_progress = 0.994946
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-3, -4)
+shape = SubResource("CircleShape2D_lj8jo")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="piso" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso"]
+visible = false
+position = Vector2(0, 4)
+shape = SubResource("WorldBoundaryShape2D_g2brh")
