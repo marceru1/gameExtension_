@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqulb5b82raqc"
-path="res://.godot/imported/spritesheet_attack_1x.png-ff6976083241883174bfb952ff178c84.ctex"
+uid="uid://djajc1vyw2yv6"
+path="res://.godot/imported/Shield_Up_KG_1.png-3e96caba7963620212cb24e92a1b0bef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet_attack_1x.png"
-dest_files=["res://.godot/imported/spritesheet_attack_1x.png-ff6976083241883174bfb952ff178c84.ctex"]
+source_file="res://assets/Knight_player/Shield_Up_KG_1.png"
+dest_files=["res://.godot/imported/Shield_Up_KG_1.png-3e96caba7963620212cb24e92a1b0bef.ctex"]
 
 [params]
 

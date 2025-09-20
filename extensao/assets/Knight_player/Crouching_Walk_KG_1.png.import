@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1yfqi1qkf67v"
-path="res://.godot/imported/spritesheet_jump_1x.png-0d9cde276bbe5272f74e06882e8934f3.ctex"
+uid="uid://rpr4p5323vu7"
+path="res://.godot/imported/Crouching_Walk_KG_1.png-ec75bbfcf8f1c5f484ad210ce7b0217d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet_jump_1x.png"
-dest_files=["res://.godot/imported/spritesheet_jump_1x.png-0d9cde276bbe5272f74e06882e8934f3.ctex"]
+source_file="res://assets/Knight_player/Crouching_Walk_KG_1.png"
+dest_files=["res://.godot/imported/Crouching_Walk_KG_1.png-ec75bbfcf8f1c5f484ad210ce7b0217d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7k2x4dwvl17k"
-path="res://.godot/imported/spritesheet_death_1x.png-aedfa3315dcb42152ab5104d6c271d3e.ctex"
+uid="uid://bc2owahpanma7"
+path="res://.godot/imported/Grab_idle_KG_1.png-d36e2144e8f0e1f958002d1a0568a388.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet_death_1x.png"
-dest_files=["res://.godot/imported/spritesheet_death_1x.png-aedfa3315dcb42152ab5104d6c271d3e.ctex"]
+source_file="res://assets/Knight_player/Grab_idle_KG_1.png"
+dest_files=["res://.godot/imported/Grab_idle_KG_1.png-d36e2144e8f0e1f958002d1a0568a388.ctex"]
 
 [params]
 

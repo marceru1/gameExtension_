@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vn50251o1nr3"
-path="res://.godot/imported/spritesheet_idle_1x.png-de9504fdadac382d3673d2def4e0cc60.ctex"
+uid="uid://dtwibv0nfrtyd"
+path="res://.godot/imported/Pushing_KG_1.png-35a547467d3ac83e85805445473df929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet_idle_1x.png"
-dest_files=["res://.godot/imported/spritesheet_idle_1x.png-de9504fdadac382d3673d2def4e0cc60.ctex"]
+source_file="res://assets/Knight_player/Pushing_KG_1.png"
+dest_files=["res://.godot/imported/Pushing_KG_1.png-35a547467d3ac83e85805445473df929.ctex"]
 
 [params]
 
