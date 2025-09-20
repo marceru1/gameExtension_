@@ -7,6 +7,7 @@ var acceleration = 0.1
 const JUMP_VELOCITY = -350.0
 @onready var animated_move_sprite = $MoveSprite
 @onready var animated_attack_sprite = $AttackSprite
+@onready var animated_dash_sprite = $DashSprite
 
 var is_attacking = false
 
@@ -33,7 +34,9 @@ func _physics_process(delta: float) -> void:
 		dash_time = DASH_DURATION
 		$dash_again_timer.start()
 		
-		
+		animated_move_sprite.visible = false # Esconde o sprite normal
+		animated_dash_sprite.visible = true  # Mostra o sprite de dash
+		animated_dash_sprite.play("dash") # Toca a animação do dash
 
 		
 	
@@ -46,10 +49,14 @@ func _physics_process(delta: float) -> void:
 			if dash_time <=0:
 				is_dashing = false
 				velocity.x = direction * SPEED
+				
+				animated_dash_sprite.visible = false # Esconde o sprite de dash
+				animated_move_sprite.visible = true  # Mostra o sprite normal de volta
 		else:
 			velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * acceleration) #refinando a acao de acelerar
 			animated_move_sprite.flip_h = direction < 0 #faz a animacao mudar de lado
 			animated_attack_sprite.flip_h = direction < 0 #faz bater pro lado que o personagem esta
+			animated_dash_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * decelaration) #refinando a acao de desacelerar
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cn3gl0g0kqpx3"]
+[gd_scene load_steps=39 format=3 uid="uid://cn3gl0g0kqpx3"]
 
 [ext_resource type="Script" uid="uid://dk7wj45pao6w7" path="res://scripts/character_body_2d.gd" id="1_g2brh"]
 [ext_resource type="Texture2D" uid="uid://ks5umk5m0wyu" path="res://assets/Knight_player/Dashing_KG_1.png" id="2_rhr3r"]
@@ -22,6 +22,26 @@ region = Rect2(200, 0, 100, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_605yl"]
 atlas = ExtResource("2_rhr3r")
 region = Rect2(300, 0, 100, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7f82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33wo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsbhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_605yl")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhr3r"]
 atlas = ExtResource("2_ws0vm")
@@ -93,23 +113,6 @@ region = Rect2(600, 0, 100, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rhr3r"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_33wo8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rsbhr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mjxx7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_605yl")
-}],
-"loop": false,
-"name": &"dash",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rhr3r")
@@ -237,11 +240,17 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_g2brh")
 
+[node name="DashSprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(-3, -11)
+sprite_frames = SubResource("SpriteFrames_q7f82")
+animation = &"dash"
+
 [node name="MoveSprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_rhr3r")
-animation = &"dash"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
