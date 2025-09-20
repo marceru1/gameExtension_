@@ -254,6 +254,9 @@ position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_u2kg2")
 animation = &"attack"
 
+[node name="dash_again_timer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.504
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
@@ -263,3 +266,5 @@ zoom = Vector2(3, 3)
 visible = false
 position = Vector2(0, 4)
 shape = SubResource("WorldBoundaryShape2D_g2brh")
+
+[connection signal="timeout" from="CharacterBody2D/dash_again_timer" to="CharacterBody2D" method="_on_dash_again_timer_timeout"]

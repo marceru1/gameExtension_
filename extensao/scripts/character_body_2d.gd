@@ -11,11 +11,13 @@ const JUMP_VELOCITY = -350.0
 var is_attacking = false
 
 var is_dashing = false
-var DASH_SPEED = 700.0
+var DASH_SPEED = 600.0
 var DASH_DURATION = 0.2
 var dash_time = 0.0
+var can_dash = true
 
 func _physics_process(delta: float) -> void:
+
 	# gravidade
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -25,11 +27,29 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	
+	if Input.is_action_just_pressed("dash") and can_dash:
+		is_dashing = true
+		can_dash = false
+		dash_time = DASH_DURATION
+		$dash_again_timer.start()
+		
+		
+
+		
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction: 
-		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * acceleration) #refinando a acao de acelerar
-		animated_move_sprite.flip_h = direction < 0 #faz a animacao mudar de lado
-		animated_attack_sprite.flip_h = direction < 0 #faz bater pro lado que o personagem esta
+	if direction:
+		if is_dashing:
+			velocity.x = direction * DASH_SPEED
+			
+			dash_time -= delta
+			if dash_time <=0:
+				is_dashing = false
+				velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * acceleration) #refinando a acao de acelerar
+			animated_move_sprite.flip_h = direction < 0 #faz a animacao mudar de lado
+			animated_attack_sprite.flip_h = direction < 0 #faz bater pro lado que o personagem esta
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * decelaration) #refinando a acao de desacelerar
 
@@ -37,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	#iniciando animacoes de movimento
 	if not is_attacking:
 		if is_on_floor(): #adiciona as animacoes
-			if direction: 
+			if direction:
 				animated_move_sprite.play("run")
 			else:
 				animated_move_sprite.play("idle")
@@ -63,3 +83,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	move_and_slide()
+
+
+func _on_dash_again_timer_timeout() -> void:
+	can_dash = true
