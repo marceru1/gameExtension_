@@ -26,21 +26,21 @@ region = Rect2(300, 0, 100, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_q7f82"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_33wo8")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_rsbhr")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_mjxx7")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_605yl")
 }],
 "loop": false,
 "name": &"dash",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhr3r"]
