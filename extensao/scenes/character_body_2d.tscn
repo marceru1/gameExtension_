@@ -235,7 +235,7 @@ animations = [{
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2brh"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Principal" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_g2brh")
