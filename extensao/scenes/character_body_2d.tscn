@@ -236,6 +236,7 @@ animations = [{
 [node name="Principal" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
 script = ExtResource("1_g2brh")
 
 [node name="DashSprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
