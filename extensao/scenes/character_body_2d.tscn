@@ -245,15 +245,17 @@ visible = false
 position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_q7f82")
 animation = &"dash"
+frame = 3
+frame_progress = 1.0
 
 [node name="MoveSprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_rhr3r")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="hitbox" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-3, -9)
 shape = SubResource("RectangleShape2D_g2brh")
 
@@ -262,6 +264,8 @@ visible = false
 position = Vector2(-3, -11)
 sprite_frames = SubResource("SpriteFrames_u2kg2")
 animation = &"attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="dash_again_timer" type="Timer" parent="CharacterBody2D"]
 wait_time = 0.504
