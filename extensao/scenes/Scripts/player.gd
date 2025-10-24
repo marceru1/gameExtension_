@@ -6,8 +6,7 @@ const dash_speed = 900.0
 const dash_duration = 0.2
 const gravity = 1200.0
 
-@export var acceleration: float = 20.0
-@export var friction: float = 25.0
+
 
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
