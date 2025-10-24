@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var SPEED = 300.0
-var decelaration = 0.1
-var acceleration = 0.1
+var decelaration = 1
+var acceleration = 1
 const JUMP_VELOCITY = -350.0
 
 @onready var animated_move_sprite = $MoveSprite
@@ -11,8 +11,8 @@ const JUMP_VELOCITY = -350.0
 
 var is_attacking = false
 var is_dashing = false
-var DASH_SPEED = 600.0
-var DASH_DURATION = 0.1
+var DASH_SPEED = 500.0
+var DASH_DURATION = 0.001
 var dash_time = 0.0
 var dash_direction = 0.0  # Armazena a direção do dash
 var can_dash = true
