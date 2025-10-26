@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cn3gl0g0kqpx3"]
+[gd_scene load_steps=20 format=3 uid="uid://cn3gl0g0kqpx3"]
 
 [ext_resource type="Texture2D" uid="uid://ct2pi63bihqj4" path="res://assets/Knight_player/Idle_KG_1.png" id="1_lj8jo"]
 [ext_resource type="Script" uid="uid://c3yh4qco2j372" path="res://scenes/Scripts/player.gd" id="1_t53lx"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dndec8cpsmqcx" path="res://assets/Knight_player/Jump_KG_1.png" id="3_ws0vm"]
 [ext_resource type="Texture2D" uid="uid://du6ylojpfbvct" path="res://assets/Knight_player/Attack_KG_1.png" id="5_ws0vm"]
 [ext_resource type="Texture2D" uid="uid://dipsaupge4hjn" path="res://assets/Knight_player/Fall_KG_1.png" id="6_rhr3r"]
-[ext_resource type="Texture2D" uid="uid://csr66wds6qvds" path="res://assets/sprites/slime_green.png" id="9_cibgq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rhr3r"]
 
@@ -312,100 +311,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi2kj"]
 size = Vector2(35, 63)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cibgq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfdas"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nwgm"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pl6r"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5gf8"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_42hdn"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_el37e"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_inrnk"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqsd8"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ugk0l"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eewtm"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6j3l"]
-atlas = ExtResource("9_cibgq")
-region = Rect2(72, 48, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_diyyd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfdas")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8nwgm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7pl6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x5gf8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_42hdn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_el37e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_inrnk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wqsd8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ugk0l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eewtm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o6j3l")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [node name="Principal" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
 [node name="floor" type="StaticBody2D" parent="."]
-visible = false
+position = Vector2(3, 75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2(-4, 33)
@@ -446,21 +358,6 @@ visible = false
 visible = false
 position = Vector2(32.5, -9.5)
 shape = SubResource("RectangleShape2D_yi2kj")
-
-[node name="slime" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="slime"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slime/Area2D"]
-position = Vector2(90, 8)
-shape = SubResource("RectangleShape2D_cibgq")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="slime"]
-position = Vector2(91, 5)
-sprite_frames = SubResource("SpriteFrames_diyyd")
-frame = 1
-frame_progress = 0.785848
-flip_h = true
 
 [connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_DashTimer_timeout"]

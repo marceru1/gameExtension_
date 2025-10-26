@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 
+
+
 ## DEFININDO OS VALORES DE MOVIMENTACAO
 const speed: float = 300.0
 const jump_velocity = -500.0
@@ -137,3 +139,7 @@ func start_attack() -> void: ########
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack":
 		is_attacking= false
+		
+
+		
+		
