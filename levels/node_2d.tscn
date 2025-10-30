@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://bo7xm0bpe3s6q"]
+
+[ext_resource type="Texture2D" uid="uid://dlcohqgcofny5" path="res://sprites/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_7y6dq"]
+[ext_resource type="Script" uid="uid://bc34spuj5gj7x" path="res://levels/jogador.gd" id="1_lpohp"]
+[ext_resource type="PackedScene" uid="uid://dekturjbjrybk" path="res://actors/enemy.tscn" id="3_5vjvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vjvw"]
+atlas = ExtResource("1_7y6dq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpohp"]
+atlas = ExtResource("1_7y6dq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t5pj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vjvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpohp")
+}],
+"loop": true,
+"name": &"jogador",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yes5d"]
+radius = 7.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y6dq"]
+size = Vector2(372, 20)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7y6dq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibfnv"]
+size = Vector2(133.5, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ibfnv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Jogador" type="CharacterBody2D" parent="."]
+script = ExtResource("1_lpohp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jogador"]
+position = Vector2(96, -20.5)
+scale = Vector2(0.796875, 0.84375)
+sprite_frames = SubResource("SpriteFrames_4t5pj")
+animation = &"jogador"
+autoplay = "jogador"
+frame_progress = 0.954608
+
+[node name="colisao do jogador" type="CollisionShape2D" parent="Jogador"]
+position = Vector2(96, -14)
+shape = SubResource("CapsuleShape2D_yes5d")
+
+[node name="Camera2D" type="Camera2D" parent="Jogador"]
+
+[node name="chaoteste1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chaoteste1"]
+position = Vector2(186, 11)
+shape = SubResource("RectangleShape2D_7y6dq")
+
+[node name="Sprite2D" type="Sprite2D" parent="chaoteste1"]
+texture_filter = 1
+position = Vector2(185, 11)
+scale = Vector2(0.725586, 0.0390624)
+texture = SubResource("NoiseTexture2D_7y6dq")
+
+[node name="chaoteste2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chaoteste2"]
+position = Vector2(185.25, -41)
+shape = SubResource("RectangleShape2D_ibfnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="chaoteste2"]
+position = Vector2(186.5, -41.5)
+scale = Vector2(135, 21)
+texture = SubResource("PlaceholderTexture2D_ibfnv")
+
+[node name="Enemy" parent="." instance=ExtResource("3_5vjvw")]
+position = Vector2(18, 51)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_5vjvw")]
+position = Vector2(6, -8)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_5vjvw")]
+position = Vector2(-52, 50)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_5vjvw")]
+position = Vector2(122, 54)
