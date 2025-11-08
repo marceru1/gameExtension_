@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cthfokv5t7yov"]
+[gd_scene load_steps=5 format=4 uid="uid://cthfokv5t7yov"]
 
 [ext_resource type="PackedScene" uid="uid://cn3gl0g0kqpx3" path="res://scenes/character_body_2d.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://by8uqkxe0an2f" path="res://assets/Snow platform tileset/Snow_platform_tileset.png" id="2_yqjtg"]
@@ -138,8 +138,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-
 [node name="Game" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -149,9 +147,3 @@ tile_set = SubResource("TileSet_lbhrr")
 [node name="Principal" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(9, -41)
 scale = Vector2(0.8, 0.8)
-
-[node name="demon" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="demon"]
-position = Vector2(87, -19)
-shape = SubResource("RectangleShape2D_yqjtg")
