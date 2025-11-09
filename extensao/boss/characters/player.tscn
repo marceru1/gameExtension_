@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq1y0jovsgle4"]
+
+[ext_resource type="Script" uid="uid://bwvb3i72o6pxl" path="res://boss/scripts/player.gd" id="1_dnjla"]
+[ext_resource type="PackedScene" uid="uid://xniug7dduw2n" path="res://boss/characters/bullet.tscn" id="2_3eadt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6p3mc"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p3mc"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_dnjla")
+bullet_node = ExtResource("2_3eadt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_6p3mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6p3mc")

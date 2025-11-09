@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://y4t5neielljn"]
+
+[ext_resource type="PackedScene" uid="uid://dcarpt7rnqith" path="res://boss/characters/boss.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dq2ob6n3mmmie" path="res://boss/characters/character_body_2d.tscn" id="3_us3cq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_luuw4"]
+distance = -618.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="boss" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(397, 233)
+scale = Vector2(3.24759, 3.24759)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, -8)
+shape = SubResource("WorldBoundaryShape2D_luuw4")
+
+[node name="player" parent="." instance=ExtResource("3_us3cq")]
+position = Vector2(868, 297)
