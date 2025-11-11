@@ -154,6 +154,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 		
 		
+
+
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	print(\"DETECTOU: \" + body.name)
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2brh"]
@@ -486,6 +490,7 @@ one_shot = true
 
 [node name="attack_area" type="Area2D" parent="."]
 visible = false
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
 visible = false
@@ -495,3 +500,4 @@ shape = SubResource("RectangleShape2D_yi2kj")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_DashCooldownTimer_timeout"]
+[connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
